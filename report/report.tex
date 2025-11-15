@@ -1,13 +1,18 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage[T1]{fontenc}
 \usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 
-% Configure listings for better code display
+% Use system fonts for reliable embedding with XeLaTeX
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+
+% Configure listings for better code display (monospaced font from fontspec)
 \lstset{
     language=Python,
     basicstyle=\ttfamily\small,
@@ -25,7 +30,7 @@
     belowskip=10pt
 }
 
-\title{Snake Game Project Report}
+	itle{Snake Game Project Report}
 \author{Game Development Report}
 \date{\today}
 
