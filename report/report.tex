@@ -1,10 +1,13 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[margin=1in]{geometry}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
 
+% Configure listings for better code display
 \lstset{
     language=Python,
     basicstyle=\ttfamily\small,
@@ -14,12 +17,16 @@
     stringstyle=\color{red},
     showstringspaces=false,
     numbers=left,
-    numberstyle=\tiny,
-    backgroundcolor=\color{lightgray!10}
+    numberstyle=\tiny\color{gray},
+    backgroundcolor=\color{lightgray!10},
+    frame=single,
+    captionpos=b,
+    aboveskip=10pt,
+    belowskip=10pt
 }
 
 \title{Snake Game Project Report}
-\author{Development Report}
+\author{Game Development Report}
 \date{\today}
 
 \begin{document}
@@ -99,20 +106,24 @@ Each commit represents a meaningful development step:
 \section{Game Architecture}
 
 \subsection{Core Components}
+The game architecture consists of several well-organized components:
+
 \begin{itemize}
     \item \textbf{Game Loop}: Main game loop that handles events, updates game state, and renders graphics
     \item \textbf{Snake Management}: List-based representation of the snake body segments
     \item \textbf{Collision Detection}: Functions to check wall collisions and self-collisions
-    \item \textbf{Rendering System}: Pygame-based graphics rendering for snake, food, and UI
-    \item \textbf{Score Tracking}: Real-time score tracking and display system
+    \item \textbf{Rendering System}: Pygame-based graphics rendering for snake, food, and UI elements
+    \item \textbf{Score Tracking}: Real-time score tracking and display system during gameplay
 \end{itemize}
 
 \subsection{Key Functions}
+The main functions in the implementation include:
+
 \begin{itemize}
-    \item \texttt{message()}: Displays text messages on screen
-    \item \texttt{display\_score()}: Shows current score during gameplay
+    \item \texttt{message()}: Displays text messages on the game screen
+    \item \texttt{display\_score()}: Shows current score in the top-left corner
     \item \texttt{check\_game\_over()}: Checks for collision conditions
-    \item \texttt{gameLoop()}: Main game execution loop
+    \item \texttt{gameLoop()}: Main game execution loop with event handling
     \item \texttt{get\_difficulty()}: Returns difficulty level settings
 \end{itemize}
 
