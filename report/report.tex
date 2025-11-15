@@ -1,0 +1,140 @@
+\documentclass[12pt]{article}
+\usepackage[utf-8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny,
+    backgroundcolor=\color{lightgray!10}
+}
+
+\title{Snake Game Project Report}
+\author{Development Report}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Project Introduction}
+
+This project implements a classic Snake game using Python and Pygame. The Snake game is an interactive gameplay experience where the player controls a snake that moves on a 2D grid. The objective is to eat food items to grow the snake while avoiding collisions with walls and the snake's own body.
+
+\subsection{Key Features}
+\begin{itemize}
+    \item Interactive snake gameplay with arrow key controls
+    \item Real-time score tracking during gameplay
+    \item Collision detection for walls and self-collision
+    \item Difficulty level configuration (Easy, Medium, Hard)
+    \item Game over detection with restart option (press C to restart or Q to quit)
+\end{itemize}
+
+\subsection{Technology Stack}
+\begin{itemize}
+    \item Language: Python 3.x
+    \item Graphics Library: Pygame
+    \item Game Loop: Custom event-driven architecture
+\end{itemize}
+
+\section{AI Prompts Used During Development}
+
+The following AI prompts were used to develop and improve the Snake Game:
+
+\subsection{Prompt 1: Initial Game Structure}
+\textit{``Create a Python Snake game using Pygame with basic gameplay mechanics including snake movement, food eating, and collision detection.''}
+
+This prompt guided the creation of the initial game structure with core mechanics.
+
+\subsection{Prompt 2: Score Display Enhancement}
+\textit{``Add a score display function to the Snake game that shows the current score in real-time during gameplay.''}
+
+This prompt led to the implementation of the score tracking system.
+
+\subsection{Prompt 3: Code Refactoring}
+\textit{``Extract the collision detection logic into a separate reusable function to improve code maintainability.''}
+
+This prompt resulted in better code organization through the creation of a dedicated collision detection function.
+
+\subsection{Prompt 4: Difficulty Levels}
+\textit{``Add difficulty level configuration to the Snake game with Easy, Medium, and Hard modes.''}
+
+This prompt introduced game configuration capabilities and difficulty parameters.
+
+\subsection{Prompt 5: Documentation}
+\textit{``Write comprehensive README documentation for the Snake Game project including features, installation, controls, and game rules.''}
+
+This prompt produced the complete project documentation.
+
+\section{Development History}
+
+The project was developed through the following commits (last 5 commits from git log):
+
+\begin{verbatim}
+473d7f0 docs: add comprehensive project documentation
+69f2656 feat: add difficulty level configuration
+d852ded refactor: extract collision detection into separate function
+ced2ede feat: add score display during gameplay
+7e577e7 Add initial Snake game code
+\end{verbatim}
+
+Each commit represents a meaningful development step:
+\begin{enumerate}
+    \item Initial Snake game code with basic gameplay mechanics
+    \item Added score display functionality during gameplay
+    \item Refactored collision detection into a separate function
+    \item Introduced difficulty level configuration system
+    \item Added comprehensive project documentation
+\end{enumerate}
+
+\section{Game Architecture}
+
+\subsection{Core Components}
+\begin{itemize}
+    \item \textbf{Game Loop}: Main game loop that handles events, updates game state, and renders graphics
+    \item \textbf{Snake Management}: List-based representation of the snake body segments
+    \item \textbf{Collision Detection}: Functions to check wall collisions and self-collisions
+    \item \textbf{Rendering System}: Pygame-based graphics rendering for snake, food, and UI
+    \item \textbf{Score Tracking}: Real-time score tracking and display system
+\end{itemize}
+
+\subsection{Key Functions}
+\begin{itemize}
+    \item \texttt{message()}: Displays text messages on screen
+    \item \texttt{display\_score()}: Shows current score during gameplay
+    \item \texttt{check\_game\_over()}: Checks for collision conditions
+    \item \texttt{gameLoop()}: Main game execution loop
+    \item \texttt{get\_difficulty()}: Returns difficulty level settings
+\end{itemize}
+
+\section{Game Controls}
+
+\begin{tabular}{|c|l|}
+\hline
+\textbf{Key} & \textbf{Action} \\
+\hline
+Arrow Up & Move snake upward \\
+Arrow Down & Move snake downward \\
+Arrow Left & Move snake left \\
+Arrow Right & Move snake right \\
+Q & Quit after game over \\
+C & Play again after game over \\
+\hline
+\end{tabular}
+
+\section{Conclusion}
+
+The Snake Game project demonstrates effective use of Python and Pygame to create an interactive game experience. Through systematic development with meaningful commits and AI assistance, the project evolved from basic gameplay mechanics to a feature-complete game with difficulty levels, score tracking, and comprehensive documentation.
+
+The modular design and clear separation of concerns make the codebase maintainable and extensible for future enhancements.
+
+\end{document}
