@@ -27,6 +27,17 @@ snake_speed = 15
 font_style = pygame.font.SysFont("bahnschrift", 25)
 score_font = pygame.font.SysFont("comicsansms", 35)
 
+# Game configuration
+DIFFICULTY_LEVELS = {
+    "easy": 8,
+    "medium": 15,
+    "hard": 25
+}
+
+def get_difficulty():
+    """Get difficulty level from user (default: medium)"""
+    return DIFFICULTY_LEVELS["medium"]
+
 def message(msg, color):
     mesg = font_style.render(msg, True, color)
     dis.blit(mesg, [dis_width / 6, dis_height / 3])
