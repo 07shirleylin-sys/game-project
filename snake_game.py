@@ -27,9 +27,36 @@ snake_speed = 15
 font_style = pygame.font.SysFont("bahnschrift", 25)
 score_font = pygame.font.SysFont("comicsansms", 35)
 
+# Game configuration
+DIFFICULTY_LEVELS = {
+    "easy": 8,
+    "medium": 15,
+    "hard": 25
+}
+
+def get_difficulty():
+    """Get difficulty level from user (default: medium)"""
+    return DIFFICULTY_LEVELS["medium"]
+
 def message(msg, color):
     mesg = font_style.render(msg, True, color)
     dis.blit(mesg, [dis_width / 6, dis_height / 3])
+
+def display_score(score):
+    score_text = score_font.render("Score: " + str(score), True, yellow)
+    dis.blit(score_text, [0, 0])
+
+def check_game_over(x, y, width, height, snake_body):
+    """Check if snake hits walls or itself"""
+    # Check wall collision
+    if x >= width or x < 0 or y >= height or y < 0:
+        return True
+    # Check self collision
+    head = [x, y]
+    for block in snake_body[:-1]:
+        if block == head:
+            return True
+    return False
 
 def gameLoop():
     game_over = False
@@ -99,6 +126,7 @@ def gameLoop():
         for block in snake_List:
             pygame.draw.rect(dis, black, [block[0], block[1], snake_block, snake_block])
 
+        display_score(Length_of_snake - 1)
         pygame.display.update()
 
         if x1 == foodx and y1 == foody:
