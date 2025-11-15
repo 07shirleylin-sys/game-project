@@ -31,6 +31,10 @@ def message(msg, color):
     mesg = font_style.render(msg, True, color)
     dis.blit(mesg, [dis_width / 6, dis_height / 3])
 
+def display_score(score):
+    score_text = score_font.render("Score: " + str(score), True, yellow)
+    dis.blit(score_text, [0, 0])
+
 def gameLoop():
     game_over = False
     game_close = False
@@ -99,6 +103,7 @@ def gameLoop():
         for block in snake_List:
             pygame.draw.rect(dis, black, [block[0], block[1], snake_block, snake_block])
 
+        display_score(Length_of_snake - 1)
         pygame.display.update()
 
         if x1 == foodx and y1 == foody:
