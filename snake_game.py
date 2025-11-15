@@ -35,6 +35,18 @@ def display_score(score):
     score_text = score_font.render("Score: " + str(score), True, yellow)
     dis.blit(score_text, [0, 0])
 
+def check_game_over(x, y, width, height, snake_body):
+    """Check if snake hits walls or itself"""
+    # Check wall collision
+    if x >= width or x < 0 or y >= height or y < 0:
+        return True
+    # Check self collision
+    head = [x, y]
+    for block in snake_body[:-1]:
+        if block == head:
+            return True
+    return False
+
 def gameLoop():
     game_over = False
     game_close = False
